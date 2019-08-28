@@ -1,5 +1,10 @@
-<h1>App Component</h1>
-<app-server></app-server>
-<app-red></app-red>
-<app-green></app-green>
-<app-yellow></app-yellow>
+<h1>Welcome back {{ name }}</h1>
+<!-- <p>Server name ({{ serverName }}) with PID ({{ serverPID }}) is {{ toggleServerStatus() }}</p> -->
+<h2>Input Server Information</h2>
+<input type="text" placeholder="Server Name" [(ngModel)]='serverName'>
+<input type="text" placeholder="Server Name" [ngModel]='serverName'>
+<h3>Display Server Information</h3>
+<p>{{ serverName }}</p>
+<p>{{ serverPID }}</p>
+<p>{{ serverStatus }}</p>
+<button [disabled]="buttonState" (click)="toggleServerStatus()">Toggle server status</button>
