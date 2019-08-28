@@ -1,0 +1,7 @@
+<label class="labels">First Name</label>
+<input type="text" [(ngModel)]="user">
+<h3>Your Confirmed Name is:</h3>
+<div class="namebox">
+    <p>{{ user }}</p>
+</div>
+<button (click)="resetName()" [disabled]="buttonStatus()">Clear</button>
