@@ -7,23 +7,43 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {
-    setTimeout(() => {
-      this.buttonState = false;
-    }, 2500);
+    // setTimeout(() => {
+    //   this.buttonState = false;
+    // }, 2500);
   }
   name = 'Hiroyuki';
-  serverName = 'Apollo';
-  serverStatus = 'offline';
-  serverPID = 11;
-  statusFlag = false;
-  buttonState = true;
+  // serverName = 'Apollo';
+  // serverStatus = 'offline';
+  // serverPID = 11;
+  // statusFlag = false;
+  // buttonState = true;
 
-  toggleServerStatus() {
-    this.statusFlag = !this.statusFlag;
-    if(this.statusFlag == true) {
-      this.serverStatus = 'online';
+  // toggleServerStatus() {
+  //   this.statusFlag = !this.statusFlag;
+  //   if(this.statusFlag == true) {
+  //     this.serverStatus = 'online';
+  //   }
+  //   else this.serverStatus = 'offline';
+  //   return this.serverStatus;
+  // }
+  flag = true;
+
+  toggleFlag() {
+    this.flag = !this.flag;
+    return this.flag;
+  }
+
+  getColor() {
+    if(this.flag == true) {
+      return 'green';
     }
-    else this.serverStatus = 'offline';
-    return this.serverStatus;
+    else return 'red';
+  }
+
+  studentRoster = ['Sasuke', 'Noctis', 'Vincent'];
+  currentName: string;
+
+  add() {
+    this.studentRoster.push(this.currentName);
   }
 }

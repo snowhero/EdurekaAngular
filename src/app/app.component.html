@@ -1,10 +1,23 @@
 <h1>Welcome back {{ name }}</h1>
 <!-- <p>Server name ({{ serverName }}) with PID ({{ serverPID }}) is {{ toggleServerStatus() }}</p> -->
-<h2>Input Server Information</h2>
+<!-- <h2>Input Server Information</h2>
 <input type="text" placeholder="Server Name" [(ngModel)]='serverName'>
 <input type="text" placeholder="Server Name" [ngModel]='serverName'>
 <h3>Display Server Information</h3>
 <p>{{ serverName }}</p>
 <p>{{ serverPID }}</p>
 <p>{{ serverStatus }}</p>
-<button [disabled]="buttonState" (click)="toggleServerStatus()">Toggle server status</button>
+<button [disabled]="buttonState" (click)="toggleServerStatus()">Toggle server status</button> -->
+<h1 [ngStyle]="{color: getColor()}">This is an example of ngIf</h1>
+<h2 [ngClass]="{'white': flag}">This is just an example of ngclass</h2>
+
+<p *ngIf="flag; else elseblock">Flag is True</p>
+<ng-template #elseblock>
+    <p id="false">Flag is False</p>
+</ng-template>
+<button (click)="toggleFlag()">Toggle Flag</button>
+
+<h1>Student Roster</h1>
+<input type="text" placeholder="name" [(ngModel)]="currentName">
+<button (click)="add()">Submit Student</button>
+<li *ngFor="let names of studentRoster">{{ names }}</li>
