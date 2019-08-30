@@ -1,0 +1,18 @@
+.contentDisplay {
+    display: none;
+}
+
+.pBox {
+    height: 30px;
+    width: 100%;
+    padding: 4px 0 2px 5px;
+    background-color: aqua;
+}
+
+.fiveToggleOne {
+    color: red;
+}
+
+.fiveToggleTwo {
+    color: purple;
+}
